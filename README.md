@@ -1,7 +1,7 @@
 # Introducción a React con Typescript
 
 <div align="center">
-    <img width="200" src="./docs/images/logoasl.svg" alt="Aula Software Libre de la UCO">
+    <img width="200" src="./public/images/logoasl.svg" alt="Aula Software Libre de la UCO">
 </div>
 
 <div align="center">
