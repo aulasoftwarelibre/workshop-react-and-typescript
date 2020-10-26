@@ -27,4 +27,28 @@ describe("BearComponent", () => {
 
     getByText("-1 Bears");
   });
+
+  it('shows a message when the user reach a count of 10 bears', () => {
+    global.alert = jest.fn();
+
+    const { getByTestId } = render(<BearComponent />);
+
+    const increaseButton = getByTestId("increase-button");
+
+    for (let i = 0; i < 10; i++) {
+      fireEvent.click(increaseButton);
+    }
+
+    expect(global.alert).toHaveBeenCalled();
+  })
+});
+
+describe('Modify title custom hook', () => {
+  const { getByTestId } = render(<BearComponent />);
+
+  const decreaseButton = getByTestId("decrease-button");
+
+  fireEvent.click(decreaseButton);
+
+  expect(global.document.title).toEqual('Warning! Negative bears');
 });
