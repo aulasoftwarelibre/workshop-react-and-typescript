@@ -41,14 +41,14 @@ describe("BearComponent", () => {
 
     expect(global.alert).toHaveBeenCalled();
   })
-});
 
-describe('Modify title custom hook', () => {
-  const { getByTestId } = render(<BearComponent />);
+  it('Modify title custom hook', () => {
+    const { getByTestId } = render(<BearComponent />);
 
-  const decreaseButton = getByTestId("decrease-button");
+    const decreaseButton = getByTestId("decrease-button");
 
-  fireEvent.click(decreaseButton);
+    fireEvent.click(decreaseButton);
 
-  expect(global.document.title).toEqual('Warning! Negative bears');
+    expect(global.document.title).toEqual('Warning! Negative bears');
+  });
 });
