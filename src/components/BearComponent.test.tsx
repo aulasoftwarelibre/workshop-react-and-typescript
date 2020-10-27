@@ -8,7 +8,7 @@ describe("BearComponent", () => {
     getByText("0 Bears");
   });
 
-  it("increases the count when I click the increase button", () => {
+  /* it("increases the count when I click the increase button", () => {
     const { getByText, getByTestId } = render(<BearComponent />);
     getByText("0 Bears");
     const increaseButton = getByTestId("increase-button");
@@ -40,9 +40,9 @@ describe("BearComponent", () => {
     }
 
     expect(global.alert).toHaveBeenCalled();
-  })
+  }) */
 });
-
+/* 
 describe('Modify title custom hook', () => {
   const { getByTestId } = render(<BearComponent />);
 
@@ -52,3 +52,4 @@ describe('Modify title custom hook', () => {
 
   expect(global.document.title).toEqual('Warning! Negative bears');
 });
+ */
