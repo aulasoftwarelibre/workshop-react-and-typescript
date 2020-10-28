@@ -1,5 +1,13 @@
 import React,  {useEffect, useState} from "react"
 
+const useWarningTitle = (currentBears: number) => {
+    useEffect(() => {
+      if(currentBears < 0) {
+        document.title = 'Warning! Negative bears';
+      }
+    }, [currentBears]);
+  };
+
 export const BearComponent = () => {
 
     const [bears,setNumberOfBears] = useState(0);
@@ -9,6 +17,8 @@ export const BearComponent = () => {
             alert("Ya tenemos una granja de osos");
         }
     },[bears])
+
+    useWarningTitle(bears);
 
     return(
         <>
