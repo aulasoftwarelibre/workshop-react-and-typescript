@@ -32,7 +32,7 @@ export class BearComponent extends React.Component<Props, State>{
                     this.setState({bears: this.state.bears - 1});
                 }}
                 >
-                Addopt a new bear!
+                Free a bear!
                 </button>
             </>
         );
