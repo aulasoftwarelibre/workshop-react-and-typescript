@@ -1,41 +1,30 @@
-import React from "react"
+import React,  {useState} from "react"
 
-type Props = {};
+export const BearComponent = () => {
 
-type State = {
-    bears: number;
-};
+    const [bears,setNumberOfBears] = useState(0);
 
-export class BearComponent extends React.Component<Props, State>{
-    constructor(props: {}){
-        super(props);
-        this.state = { bears: 0 };
-    }
+    return(
+        <>
+            <span> {`${bears} Bears`} </span>
 
-    render(){
-        return(
-            <>
-                <span> {`${this.state.bears} Bears`} </span>
-
-                <button
-                data-testid="increase-button"
-                onClick={() => {
-                    this.setState({bears: this.state.bears + 1});
-                }}
-                >
+            <button
+            data-testid="increase-button"
+            onClick={() => {
+                setNumberOfBears(bears + 1);
+            }}
+            >
                 Addopt a new bear!
-                </button>
+            </button>
 
-                <button
-                data-testid="decrease-button"
-                onClick={() => {
-                    this.setState({bears: this.state.bears - 1});
-                }}
-                >
-                Addopt a new bear!
-                </button>
-            </>
-        );
-    }
-
+            <button
+            data-testid="decrease-button"
+            onClick={() => {
+                setNumberOfBears(bears - 1);
+            }}
+            >
+                Free a bear!
+            </button>
+        </>
+    );
 }
